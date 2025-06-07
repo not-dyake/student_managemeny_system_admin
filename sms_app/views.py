@@ -3,6 +3,7 @@ from .models import Student, Subject, Enrollment, Grade
 from .forms import StudentForm, SubjectForm, EnrollmentForm, GradeForm
 from django.shortcuts import render
 from .models import Student, Subject
+from django.views.generic import TemplateView
 
 from django.shortcuts import redirect
 from .forms import StudentForm
@@ -115,6 +116,11 @@ def home(request):
         'total_subjects': Subject.objects.count()
     })
 
+class HomePageView(TemplateView):
+    template_name = ('home.html', {
+        'total_students': Student.objects.count(),
+        'total_subjects': Subject.objects.count()
+    })
 
 
 def student_create(request):

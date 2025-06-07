@@ -1,8 +1,9 @@
 from django.urls import path
 from sms_app import views
+from .views import HomePageView
 
 urlpatterns = [
-    path('', views.home, name='home'),
+    path('', HomePageView.as_view(), name='home'),
     path('students/', views.student_list, name='student_list'),
     path('students/create/', views.student_create, name='student_create'),  # Create URL
     path('students/<str:student_id>/', views.student_detail, name='student_detail'),
