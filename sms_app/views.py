@@ -110,17 +110,15 @@ def grade_delete(request, grade_id):
 
 
 
-def home(request):
-    return render(request, 'home.html', {
-        'total_students': Student.objects.count(),
-        'total_subjects': Subject.objects.count()
-    })
 
 class HomePageView(TemplateView):
-    template_name = ('home.html', {
-        'total_students': Student.objects.count(),
-        'total_subjects': Subject.objects.count()
-    })
+    template_name = 'sms_app/home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['total_students'] = Student.objects.count()
+        context['total_subjects'] = Subject.objects.count()
+        return context
 
 
 def student_create(request):

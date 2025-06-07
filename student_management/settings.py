@@ -56,7 +56,7 @@ ROOT_URLCONF = 'student_management.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-         'DIRS': [os.path.join(BASE_DIR, 'sms_app/templates')],
+         'DIRS': [BASE_DIR/'sms_app/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
