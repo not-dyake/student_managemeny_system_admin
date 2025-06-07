@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-59jo7jtr4%zh8an_3#$tbgi4np_%6*t+euk2c4s+d^@-#y7n(2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['your-service-name.onrender.com']
+ALLOWED_HOSTS = ['stud_managemeny_system_admin.onrender.com', 'localhost']
 
 
 # Application definition
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'student_management.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-         'DIRS': [BASE_DIR / 'templates'],
+         'DIRS': [os.path.join(BASE_DIR, 'sms_app/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
